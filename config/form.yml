@@ -1,0 +1,31 @@
+schema:
+  title:
+    type: string
+    title: Title
+  description:
+    type: string
+    title: Description
+  colour:
+    type: string
+    title: Font Colour
+    format: color
+  meta-description:
+    type: string
+    title: Meta-Description
+form:
+  - type: fieldset
+    title: Home
+    items:
+      - key: title
+        fieldHtmlClass: input-xxlarge
+      - key: description
+        type: textarea
+  - type: fieldset
+    title: Advanced Settings
+    expandable: true
+    items:
+      - colour
+      - key: meta-description
+        fieldHtmlClass: input-xxlarge
+  - type: submit
+    title: Update

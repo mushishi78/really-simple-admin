@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Really Simple Admin</title>
+    <link href='/admin/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+    <link href='/admin/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' />
+    <link href='/admin/css/spectrum.css' rel='stylesheet' type='text/css' />
+    <style>
+      .form-actions {
+        padding: 0;
+        border: 0;
+        background: none;
+      }
+      .navbar-form { margin-bottom: 5px; }
+      #show-user-form { margin-left: 5px; }
+      .expandable legend { cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <div class='navbar'>
+      <div class='navbar-inner'>
+        <a class='brand' href='#'>Really Simple Admin</a>
+        <button id='show-user-form' class='pull-right btn'>
+          <i class='icon-user'></i>
+        </button>
+        <form id='user-form' class='navbar-form pull-right hide' action='user' method='post'>
+          <input type='text' name='name' placeholder='Username' />
+          <input type='password' name='password' placeholder='Password' />
+          <button class='btn'>Change</button>
+        </form>
+      </div>
+    </div>
+
+    <div class='container-fluid span10 offset1'>
+      <form></form>
+    </div>
+
+    <script src='/admin/js/app.js'></script>
+    <script>
+      $('#show-user-form').click(function() { $('#user-form').toggle(); });
+
+      var adminForm = <%= settings.form.to_json %>;
+      adminForm.value = <%= settings.db['config'].to_json %>;
+      adminForm.onSubmit = function (errors, values) {
+        if (errors) { error(); }
+        else {
+          $.post('/config', values)
+            .done(function() { alert('Successfully updated!'); })
+            .fail(function() { error(); });
+        }
+      };
+
+      function error() { alert('Something went wrong :('); }
+
+      $('.container-fluid form').jsonForm(adminForm);
+    </script>
+  </body>
+</html>

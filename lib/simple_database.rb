@@ -3,8 +3,8 @@ require 'mongo'
 Mongo::Logger.logger.level = Logger::WARN
 
 class SimpleDatabase
-  def initialize(url, database)
-    @db_client = Mongo::Client.new(url, database: database)
+  def initialize(url)
+    @db_client = Mongo::Client.new(url)
     fail(DatabaseNotFound) unless database_exists?
   end
 

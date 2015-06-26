@@ -1,6 +1,6 @@
 # Really Simple Admin
 
-Really Simple Admin is a starting block for apps that only need a backend for one admin to change some settings, but don't really need anything complicated. It uses the [sinatra](http://www.sinatrarb.com/) webframework, [mongodb](https://www.mongodb.org/) as a datastore and [JSONForm](https://github.com/joshfire/jsonform) for easy form creation.
+Really Simple Admin is a starting block for apps that only need a backend for one admin to change some settings, but don't really need anything complicated. It uses the [sinatra](http://www.sinatrarb.com/) webframework, [mongodb](https://www.mongodb.org/) as a datastore and [JSONForm](https://github.com/ulion/jsonform) for easy form creation.
 
 **[Demo](https://really-simple-admin.herokuapp.com/)**
 
@@ -44,7 +44,7 @@ There are two configuration files that can be found in the `/config` folder.
 
 ### `form.yml`
 
-This file is translated into JSON and used with [JSONForm](https://github.com/joshfire/jsonform) to define the form in the admin panel. Documentation can be found here: [JSONForm wiki](https://github.com/joshfire/jsonform/wiki#outline-of-a-json-form-object).
+This file is translated into JSON and used with [JSONForm](https://github.com/ulion/jsonform) to define the form in the admin panel. Refer to [JSONForm wiki](https://github.com/joshfire/jsonform/wiki#outline-of-a-json-form-object) for documentation and [JSONForm Playground](http://ulion.github.io/jsonform/playground/) for examples.
 
 Here is an example:
 

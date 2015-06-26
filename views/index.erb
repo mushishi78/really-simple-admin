@@ -5,29 +5,29 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name='description' content='<%= settings.db['config']['meta-description'] %>'>
-    <title><%= settings.db[:config][:title] %></title>
+    <title><%= @config[:title] %></title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <style>
       body {
         margin: 5%;
         text-align: center;
         font-size: 3em;
-        color: <%= settings.db['config'][:colour] %>;
+        color: <%= @config[:colour] %>;
         font-family: sans-serif;
       }
 
       p, li { font-family: 'Open Sans Condensed', sans-serif; }
-      a { color: <%= settings.db['config'][:colour] %>; }
+      a { color: <%= @config[:colour] %>; }
       li { list-style-type: none; }
     </style>
   </head>
   <body>
-    <h1><%= settings.db[:config][:title] %></h1>
-    <p><%= settings.db[:config][:description] %></p>
+    <h1><%= @config[:title] %></h1>
+    <p><%= @config[:description] %></p>
     To try it out, <a href='/admin' target='_blank'>login</a> with:
     <ul>
-      <li>Username: <%= settings.db[:user][:name] %></li>
-      <li>Password: <%= settings.db[:user][:password] %></li>
+      <li>Username: <%= @admin[:name] %></li>
+      <li>Password: <%= @admin[:password] %></li>
     </ul>
   </body>
 </html>

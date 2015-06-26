@@ -32,5 +32,7 @@ post '/config' do
 end
 
 get '/' do
+  @admin = settings.db[:user]
+  @config = settings.db[:config]
   erb :index
 end

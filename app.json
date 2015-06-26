@@ -1,0 +1,6 @@
+{
+  "name": "Really Simple Admin",
+  "description": "Really Simple Admin is a Sinatra solution for a simple backend.",
+  "keywords": ["admin", "backed", "simple"],
+  "addons": ["mongolab:sandbox"]
+}

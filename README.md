@@ -2,6 +2,8 @@
 
 Really Simple Admin is a starting block for apps that only need a backend for one admin to change some settings, but don't really need anything complicated. It uses the [sinatra](http://www.sinatrarb.com/) webframework, [mongodb](https://www.mongodb.org/) as a datastore and [JSONForm](https://github.com/joshfire/jsonform) for easy form creation.
 
+**[Demo](https://really-simple-admin.herokuapp.com/)**
+
 ## Prerequisites
 
 * [Ruby](https://www.ruby-lang.org)

@@ -16,8 +16,8 @@ Really Simple Admin is a starting block for apps that only need a backend for on
 
   ``` console
   $ cd /my-projects-folder
-  $ git clone https://github.com/[insert-username]/really-simple-admin
-  $ cd really-simple-admin
+  $ git clone https://github.com/[insert-username]/really-simple-admin my-app
+  $ cd my-app
   ```
 
 3. Install dependencies:
@@ -29,7 +29,7 @@ Really Simple Admin is a starting block for apps that only need a backend for on
 4. Set MongoDB URL environment variable:
 
   ``` console
-  $ set MONGOLAB_URI='mongodb://127.0.0.1/really-simple-admin'
+  $ set MONGOLAB_URI='mongodb://127.0.0.1/my-app'
   ```
 
 5. Run:

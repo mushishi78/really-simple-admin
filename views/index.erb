@@ -23,11 +23,18 @@
   </head>
   <body>
     <h1><%= @config[:title] %></h1>
+
     <p><%= @config[:description] %></p>
+
     To try it out, <a href='/admin' target='_blank'>login</a> with:
     <ul>
       <li>Username: <%= @admin[:name] %></li>
       <li>Password: <%= @admin[:password] %></li>
     </ul>
+
+    <a href='https://github.com/mushishi78/really-simple-admin'>
+      <img src='/github.png' />
+      Github
+    </a>
   </body>
 </html>

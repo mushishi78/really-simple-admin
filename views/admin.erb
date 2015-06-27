@@ -43,7 +43,7 @@
       $('#show-user-form').click(function() { $('#user-form').toggle(); });
 
       var adminForm = <%= settings.form.to_json %>;
-      adminForm.value = <%= settings.db['config'].to_json %>;
+      adminForm.value = <%= settings.db['config'].to_json.gsub( '</', '<\/' ) %>;
       adminForm.onSubmit = function (errors, values) {
         if (errors) { error(); }
         else {

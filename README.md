@@ -2,7 +2,7 @@
 
 Really Simple Admin is a starting block for apps that only need a backend for one admin to change some settings, but don't really need anything complicated. It uses the [sinatra](http://www.sinatrarb.com/) webframework, [mongodb](https://www.mongodb.org/) as a datastore and [JSONForm](https://github.com/joshfire/jsonform) for easy form creation.
 
-The backend is protected using HTTP Basic authentication with a single username and password. To edit settings, the admin is presented a form that is defined with [yaml config files](#Configuration). This form updates a single mongodb document, to be used in the application for any means.
+The backend is protected using HTTP Basic authentication with a single username and password. To edit settings, the admin is presented a form that is defined with [yaml config files](#configuration). This form updates a single mongodb document, to be used in the application for any means.
 
 To see it in action, trying logging into the demo: **[Demo](https://really-simple-admin.herokuapp.com/)**
 

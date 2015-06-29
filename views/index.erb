@@ -5,26 +5,26 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name='description' content='<%= settings.db['config']['meta-description'] %>'>
-    <title><%= @config[:title] %></title>
+    <title><%= @data[:title] %></title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <style>
       body {
         margin: 5%;
         text-align: center;
         font-size: 3em;
-        color: <%= @config[:colour] %>;
+        color: <%= @data[:colour] %>;
         font-family: sans-serif;
       }
 
       p, li { font-family: 'Open Sans Condensed', sans-serif; }
-      a { color: <%= @config[:colour] %>; }
+      a { color: <%= @data[:colour] %>; }
       li { list-style-type: none; }
     </style>
   </head>
   <body>
-    <h1><%= @config[:title] %></h1>
+    <h1><%= @data[:title] %></h1>
 
-    <p><%= @config[:description] %></p>
+    <p><%= @data[:description] %></p>
 
     To try it out, <a href='/admin' target='_blank'>login</a> with:
     <ul>

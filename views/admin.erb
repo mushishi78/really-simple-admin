@@ -40,17 +40,16 @@
     <script>
       $('#show-user-form').click(function() { $('#user-form').toggle(); });
 
-      var adminForm = <%= settings.form.to_json %>;
-      adminForm.value = <%= settings.db['config'].to_json.gsub( '</', '<\/' ) %>;
-      adminForm.onSubmit = function (errors, values) {
-        if (errors) { error(); }
-        else {
-          $.post('/config', values)
-            .done(function() { alert('Successfully updated!'); })
-            .fail(function() { error(); });
+      var adminForm = {
+        schema: <%= settings.schema %>,
+        form: <%= settings.form %>,
+        value: <%= settings.db[:data].to_json.gsub( '</', '<\/' ) %>,
+        onSubmit: function (errors, values) {
+          errors ? error() : $.post('/data', values).done(success).fail(error);
         }
       };
 
+      function success() { alert('Successfully updated!'); }
       function error() { alert('Something went wrong :('); }
 
       $('.container-fluid form').jsonForm(adminForm);

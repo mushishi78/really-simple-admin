@@ -10,8 +10,9 @@ helpers AuthHelpers
 configure do
   set :db, SimpleDatabase.new(ENV['MONGOLAB_URI'])
   settings.db.create_if_empty(:user, name: 'admin', password: 'admin')
-  settings.db.create_if_empty(:config, ConfigFiles.default)
-  set :form, ConfigFiles.form
+  settings.db.create_if_empty(:data, ConfigFiles.seed)
+  set :schema, ConfigFiles.schema.to_json
+  set :form, ConfigFiles.form.to_json
 end
 
 get '/admin' do
@@ -25,14 +26,14 @@ post '/user' do
   redirect '/admin'
 end
 
-post '/config' do
+post '/data' do
   protected!
-  settings.db.set(:config, params)
+  settings.db.set(:data, params)
   halt 200
 end
 
 get '/' do
   @admin = settings.db[:user]
-  @config = settings.db[:config]
+  @data = settings.db[:data]
   erb :index
 end

@@ -2,12 +2,8 @@ require 'yaml'
 
 module ConfigFiles
   class << self
-    def default
-      retreive_from_yaml('default')
-    end
-
-    def form
-      retreive_from_yaml('form')
+    [:schema, :form, :seed].each do |file|
+      define_method(file) { retreive_from_yaml(file) }
     end
 
     private

@@ -42,42 +42,45 @@ To see it in action, trying logging into the demo: **[Demo](https://really-simpl
 
 ## Configuration
 
-There are two configuration files that can be found in the `/config` folder.
+There are three configuration files that can be found in the `/config` folder. These files are translated into JSON and used with [JSONForm](https://github.com/ulion/jsonform) to define the form in the admin panel. Refer to [JSONForm wiki](https://github.com/joshfire/jsonform/wiki#outline-of-a-json-form-object) for documentation and [JSONForm Playground](http://ulion.github.io/jsonform/playground/) for examples.
+
+### `schema.yml`
+
+This file describes the expected shape and types for the data. As with JSONForm, it uses the [JSON-Schema](http://json-schema.org/) format to describe the data, with the exception that the outermost node is [assumed to be an object](https://github.com/joshfire/jsonform/wiki#hey-thats-not-pure-json-schema).
+
+``` yaml
+name:
+  title: Name
+  description: Nickname allowed
+  type: string
+gender:
+  title: Gender
+  type: string
+  enum:
+    - Female
+    - Male
+    - Alien
+```
+
+This would define a schema as having a `name`, that can be any string, and a `gender` which can take on the values `Female`, `Male` or `Alien`.
 
 ### `form.yml`
 
-This file is translated into JSON and used with [JSONForm](https://github.com/ulion/jsonform) to define the form in the admin panel. Refer to [JSONForm wiki](https://github.com/joshfire/jsonform/wiki#outline-of-a-json-form-object) for documentation and [JSONForm Playground](http://ulion.github.io/jsonform/playground/) for examples.
-
-Here is an example:
+This file lists the order and presentation of the fields in the admin form and used as the [form argument for JSONForm](https://github.com/joshfire/jsonform/wiki#controlling-the-layout-of-the-form).
 
 ``` yaml
-schema:
-  name:
-    title: Name
-    description: Nickname allowed
-    type: string
-  gender:
-    title: Gender
-    type: string
-    enum:
-      - Female
-      - Male
-      - Alien
-form:
-  - key: name
-    fieldHtmlClass: input-xxlarge
-  - gender
-  - type: submit
-    title: Update
+- key: name
+  fieldHtmlClass: input-xxlarge
+- gender
+- type: submit
+  title: Update
 ```
 
-This would define a schema as having a `name`, that can be any string, and a `gender` which can take on the values `Female`, `Male` or `Alien`. It will then create a form that will first have a wide `name` input, then a `gender` select box and then a `submit` button with labeled "Update".
+This defines a form that will first have a wide `name` input, then a `gender` select box and then a `submit` button labeled "Update".
 
-### `default.yml`
+### `seed.yml`
 
-This file is used to set the initial values for the configuration data. It should fullfil the schema as defined in `form.yml`.
-
-Here is an example, that follows from the previous:
+This file is used to set the initial values for the data. It should fullfil the schema as defined in `schema.yml`.
 
 ``` yaml
 name: George Takei

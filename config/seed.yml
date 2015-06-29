@@ -3,5 +3,4 @@ description: >
   Really Simple Admin is a starting block for apps that only need a backend for one admin
   to change some settings, but don't really need anything complicated. It uses the sinatra
   webframework, mongodb as a datastore and JSONForm for easy form creation.
-colour: '#333'
 meta-description: Really Simple Admin is a Sinatra solution for a simple backend.

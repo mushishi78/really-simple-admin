@@ -9,7 +9,6 @@
   title: Advanced Settings
   expandable: true
   items:
-    - colour
     - key: meta-description
       fieldHtmlClass: input-xxlarge
 - type: submit

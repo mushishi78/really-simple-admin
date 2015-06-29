@@ -45,7 +45,7 @@
         form: <%= settings.form %>,
         value: <%= settings.db[:data].to_json.gsub( '</', '<\/' ) %>,
         onSubmit: function (errors, values) {
-          errors ? error() : $.post('/data', values).done(success).fail(error);
+          errors ? error() : $.post('/data', JSON.stringify(values)).done(success).fail(error);
         }
       };
 

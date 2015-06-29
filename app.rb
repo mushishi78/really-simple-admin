@@ -28,7 +28,7 @@ end
 
 post '/data' do
   protected!
-  settings.db.set(:data, params)
+  settings.db.set(:data, JSON.parse(request.body.read))
   halt 200
 end
 

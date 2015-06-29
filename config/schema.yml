@@ -4,6 +4,9 @@ title:
 description:
   type: string
   title: Description
+colour:
+  type: string
+  title: Font Colour
 meta-description:
   type: string
   title: Meta-Description
